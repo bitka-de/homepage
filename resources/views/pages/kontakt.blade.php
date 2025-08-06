@@ -44,7 +44,7 @@
 
                 <div class="bg-gradient-to-bl from-green-400 to-green-600 hover:from-green-600 hover:to-green-700 text-white col-span-2 p-6 rounded-lg shadow-md sm:hidden flex flex-col items-center">
                     <div class="flex w-full justify-center items-center">
-                        <a href="https://wa.me/{{ config('company.contact.whatsapp') }}" target="_blank" rel="noopener"
+                        <a href="https://wa.me/{{ config('company.contact.wa') }}" target="_blank" rel="noopener"
                             class="inline-flex items-center gap-2 transition-all duration-150"
                             style="box-shadow: 0 2px 8px rgba(37,211,102,0.2);">
                             <svg xml:space="preserve" viewBox="0 0 30.667 30.667" class="size-8 fill-white">

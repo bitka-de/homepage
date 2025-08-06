@@ -27,7 +27,7 @@ return [
     'contact' => [
         'phone' => '0721 - 1745 9908',
         'mobil' => '0176 - 3053 5060',
-        'wa' => true,
+        'wa' => '4917630535060',
         'mail' => 'hallo@bitka.de',
     ],
     'socialmedia' => [
