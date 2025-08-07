@@ -9,21 +9,25 @@
 @section('content')
 
 
-    <section class="relative hero clip-1 bg-slate-700/20">
-        <img src="{{ asset('images/bg-1.webp') }}" class="absolute inset-0 w-full h-full object-cover" alt="">
+    <div class="hero clip-1 bg-slate-700/20 relative">
 
-        <div class="absolute inset-0 h-full w-full flex items-end bg-black/60 bg-gradient-to-tr from-black/50 sm:py-16">
+        <img src="{{ asset('images/bg-1.png') }}" class="absolute w-full h-full object-cover" alt="">
+
+        <section class="h-full w-full flex items-end bg-black/60 absolute top-0 sm:py-16 bg-gradient-to-tr from-black/50">
+
             <div class="p-4 text-white bitka-mw w-full mx-auto text-balance">
-                <h1 class="text-4xl sm:text-5xl leading-tight mb-6 uppercase font-bold">
-                    Web<span class="opacity-70">lösungen</span> mit <span class="text-gradient">wirkung.</span>
+
+                <h1 class="text-4xl sm:text-5xl leading-tight mb-6  uppercase font-bold">
+                    Web<span class=" opacity-70">lösungen</span> mit <span class="text-gradient">wirkung.</span>
                 </h1>
                 <p class="text-lg sm:text-xl max-w-2xl mb-8">
                     Bitka entwickelt professionelle Webseiten, Onlineshops und individuelle Anwendungen – klar
                     strukturiert, technisch sauber und mit dem Blick für das Wesentliche.
                 </p>
 
+
                 <div
-                    class="hidden sm:grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-white/80 bg-black/20 backdrop-blur-md py-12">
+                    class="sm:grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-white/80 bg-black/20 backdrop-blur-md py-12 hidden">
                     <div class="flex items-center gap-2 justify-center">
                         <svg viewBox="0 0 256 256" class="h-6 opacity-60">
                             <path fill="none" d="M0 0h256v256H0z" />
@@ -32,6 +36,7 @@
                                 d="M128 128h88m-88-64h88m-88 128h88M40 64l16 16 32-32m-48 80 16 16 32-32m-48 80 16 16 32-32" />
                         </svg> Klare Strategie
                     </div>
+
                     <div class="flex items-center gap-2 justify-center">
                         <svg viewBox="0 0 256 256" class="h-6 opacity-60">
                             <path fill="none" d="M0 0h256v256H0z" />
@@ -58,8 +63,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </div>
 
 
     {{-- Das Problem --}}
@@ -130,7 +136,7 @@
             <p class="text-base sm:text-lg text-white/90 leading-relaxed mb-6">
                 Wir entwickeln für dich einen modernen, individuellen Webauftritt, der begeistert, überzeugt – und gefunden
                 wird. Deine neue Website ist schnell, mobil-optimiert, suchmaschinenfreundlich und spiegelt deine Marke
-                perfekt wieder.
+                perfekt wider.
             </p>
 
             <p class="text-sm text-white/80 italic mb-12">
@@ -153,7 +159,6 @@
                     Ein professioneller Auftritt stärkt dein Image – und sorgt für mehr Kontaktaufnahmen.
                 </div>
             </div>
-
 
         </div>
     </section>
@@ -207,36 +212,19 @@
                     Mein Anspruch: <span class="text-white font-semibold">Digitale Lösungen mit Substanz</span> – klar,
                     skalierbar und technisch sauber. Lass uns gemeinsam dein Projekt realisieren.
                 </p>
-
-
-                <a href="{{ route('ueber-uns') }}"
-                    class="inline-flex items-center gap-2 my-4 text-one opacity-70 hover:opacity-100 transition">
-                    <span class="inline-block mb-1">Mehr über mich</span>
-
-                    <svg viewBox="0 0 256 256" class="h-6">
-                        <path fill="none" d="M0 0h256v256H0z" />
-                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="16" d="m120 200-.01-63.99L56 136m-16 80 80-80" />
-                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="16" d="M160 184h48a8 8 0 0 0 8-8V48a8 8 0 0 0-8-8H80a8 8 0 0 0-8 8v48" />
-                    </svg>
-                </a>
-
             </div>
 
             {{-- Bildblock --}}
             <div class="flex justify-center order-1 sm:order-2 z-10">
                 <div
                     class="overflow-hidden shadow-lg absolute sm:block -top-24 -right-4 sm:right-auto rounded-bl-full  max-w-[70%] opacity-50 border-none">
-                    <img src="{{ asset('images/jaypiii.webp') }}" alt="Jan Behrens – Webentwickler aus Karlsruhe"
+                    <img src="{{ asset('images/jaypiii.jpg') }}" alt="Jan Behrens – Webentwickler aus Karlsruhe"
                         class="w-full h-auto object-cover">
                 </div>
             </div>
 
         </div>
-
     </section>
-
 
 
 

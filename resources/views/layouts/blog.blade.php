@@ -8,27 +8,8 @@
 
     {{-- Titel dynamisch, mit Fallback --}}
     <title>@yield('title', 'Bitka – Weblösung für Profis')</title>
-
-    {{-- Meta Description --}}
     <meta name="description" content="@yield('meta_description', 'Wir entwickeln Webseiten, Onlineshops und individuelle Softwarelösungen für Profis.')">
-
-    {{-- Canonical URL --}}
     <link rel="canonical" href="{{ url()->current() }}" />
-
-    {{-- Open Graph (Facebook & Co) --}}
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="@yield('og_title', trim($__env->yieldContent('title') ?? 'Bitka'))">
-    <meta property="og:description" content="@yield('og_description', trim($__env->yieldContent('meta_description') ?? 'Weblösungen für Profis'))">
-    <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:image" content="@yield('og_image', asset('images/og-default.jpg'))">
-
-    {{-- Twitter Card --}}
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="@yield('twitter_title', trim($__env->yieldContent('title') ?? 'Bitka'))">
-    <meta name="twitter:description" content="@yield('twitter_description', trim($__env->yieldContent('meta_description') ?? 'Weblösungen für Profis'))">
-    <meta name="twitter:image" content="@yield('twitter_image', asset('images/og-default.jpg'))">
-
-
 
     {{-- Favicon --}}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicons/apple-touch-icon-180x180.png') }}">
@@ -38,35 +19,6 @@
     <meta name="msapplication-square310x310logo" content="{{ asset('images/favicons/mstile-310x310.png') }}">
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    @if (request()->routeIs('home'))
-
-        <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Bitka Webagentur",
-      "url": "https://bitka.de",
-      "logo": "https://bitka.de/logo.jpg",
-      "telephone": "+49‑721‑17459908",
-      "email": "hallo@bitka.de",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Karlstraße 112",
-        "addressLocality": "Karlsruhe",
-        "postalCode": "76137",
-        "addressCountry": "DE"
-      },
-      "description": "Webseiten, Onlineshops, Beratung und individuelle Webentwicklung für Unternehmen.",
-      "sameAs": [
-        "https://www.instagram.com/bitka_de/"
-      ]
-    }
-        </script>
-        
-    @endif
-
-
 
     {{-- Styles / Scripts: Vite oder Manifest --}}
     @env('local')
@@ -86,11 +38,14 @@
         <script type="module" src="{{ asset('build/' . $jsPath) }}"></script>
     @endif
     @endenv
+    @stack('styles')
 </head>
 
 
 <body class="font-sans antialiased text-gray-800">
     @include('partials.header')
+
+    <div class="min-h-40 bg-gray-700"></div>
 
     <main class="min-h-screen">
         @yield('content')
@@ -98,6 +53,7 @@
 
     @include('partials.footer')
     @vite('resources/js/app.js')
+    @stack('scripts')
 </body>
 
 </html>

@@ -21,7 +21,6 @@
         <nav id="main-nav" class="hidden sm:flex gap-6 items-center text-sm font-medium bg-back/70 backdrop-blur-md p-2 shadow border-b border-white/20 rounded-lg *:hover:text-white text-white/60 px-4">
             @php
                 $links = [
-                    ['route' => 'home', 'label' => 'Startseite'],
                     ['route' => 'ueber-uns', 'label' => 'Über mich'],
                     ['route' => 'webseiten', 'label' => 'Webseiten'],
                     ['route' => 'onlineshops', 'label' => 'Onlineshops'],
@@ -30,10 +29,7 @@
                 ];
             @endphp
             @foreach ($links as $link)
-
-            @if($link['route'] !== 'home')
                 <a href="{{ route($link['route']) }}" class="">{{ $link['label'] }}</a>
-            @endif
             @endforeach
             <a 
                 href="{{ route('kontakt') }}" 
@@ -45,69 +41,12 @@
     </div>
 
 {{-- Mobile Navigation --}}
-<div id="mobile-mask" class="sm:hidden fixed inset-0 bg-black/60 backdrop-blur-md z-30 transition-opacity duration-300 opacity-0 pointer-events-none"></div>
-<div id="mobile-nav" class="sm:hidden fixed flex items-center justify-end top-0 right-0 h-full w-80 bg-gradient-to-bl from-black to-gray-800 shadow-2xl transform translate-x-full transition-transform duration-300 z-40 cp-1 overflow-hidden">
-    <div class="absolute inset-0 pointer-events-none">
-        <svg class="absolute animate-move-slow left-8 top-16" width="80" height="80" viewBox="0 0 80 80">
-            <defs>
-                <filter id="blur1" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="12" />
-                </filter>
-            </defs>
-            <circle cx="40" cy="40" r="32" class="fill-one/30" filter="url(#blur1)" />
-        </svg>
-        <svg class="absolute animate-move-medium right-10 top-32" width="60" height="60" viewBox="0 0 60 60">
-            <defs>
-                <filter id="blur2" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="10" />
-                </filter>
-            </defs>
-            <rect x="10" y="10" width="40" height="40" rx="8" class="fill-two/30" filter="url(#blur2)" />
-        </svg>
-        <svg class="absolute animate-move-fast left-20 bottom-10" width="50" height="50" viewBox="0 0 50 50">
-            <defs>
-                <filter id="blur3" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="8" />
-                </filter>
-            </defs>
-            <polygon points="25,5 45,45 5,45" class="fill-three/30" filter="url(#blur3)" />
-        </svg>
-        <!-- Wechselnde Formen und Farben -->
-        <svg class="absolute animate-move-fast right-8 bottom-20" width="60" height="60" viewBox="0 0 60 60">
-            <defs>
-                <filter id="blur4" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="14" />
-                </filter>
-            </defs>
-            <circle cx="30" cy="30" r="24" class="fill-three/20" filter="url(#blur4)" />
-        </svg>
-        <svg class="absolute animate-move-medium left-10 top-40" width="50" height="50" viewBox="0 0 50 50">
-            <defs>
-                <filter id="blur5" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="10" />
-                </filter>
-            </defs>
-            <rect x="8" y="8" width="34" height="34" rx="6" class="fill-one/20" filter="url(#blur5)" />
-        </svg>
-        <svg class="absolute animate-move-slow right-16 top-10" width="40" height="40" viewBox="0 0 40 40">
-            <defs>
-                <filter id="blur6" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="7" />
-                </filter>
-            </defs>
-            <polygon points="20,5 35,35 5,35" class="fill-two/10" filter="url(#blur6)" />
-        </svg>
-    </div>
-    <nav class="flex flex-col gap-6 text-2xl font-bold p-8 text-right relative z-10">
+<div id="mobile-nav" class="sm:hidden fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-40">
+    <nav class="flex flex-col gap-3 text-sm font-medium p-6">
         @foreach ($links as $link)
-            <a 
-            href="{{ route($link['route']) }}" 
-            class="text-white transition-all duration-200 pr-2 {{ Route::currentRouteName() === $link['route'] ? '!text-one' : 'hover:text-one' }}"
-            >
-            {{ $link['label'] }}
-            </a>
+            <a href="{{ route($link['route']) }}" class="hover:underline text-black">{{ $link['label'] }}</a>
         @endforeach
-        <a href="{{ route('kontakt') }}" class="bg-black font-thin text-white px-5 py-3 rounded-lg self-end hover:bg-one text-right">Kontakt</a>
+        <a href="{{ route('kontakt') }}" class="bg-black text-white px-3 py-2 rounded hover:bg-gray-800 text-center">Kontakt</a>
     </nav>
 </div>
 
@@ -116,58 +55,17 @@
     document.addEventListener('DOMContentLoaded', () => {
         const toggle = document.getElementById('nav-toggle');
         const mobileNav = document.getElementById('mobile-nav');
-        const mobileMask = document.getElementById('mobile-mask');
-        function openMobileNav() {
-            mobileNav.classList.remove('translate-x-full');
-            mobileNav.classList.add('translate-x-0');
-            mobileMask.classList.remove('opacity-0', 'pointer-events-none');
-            mobileMask.classList.add('opacity-100');
-            mobileMask.style.pointerEvents = 'auto';
-        }
-        function closeMobileNav() {
-            mobileNav.classList.add('translate-x-full');
-            mobileNav.classList.remove('translate-x-0');
-            mobileMask.classList.add('opacity-0');
-            mobileMask.classList.remove('opacity-100');
-            mobileMask.style.pointerEvents = 'none';
-        }
-        toggle?.addEventListener('click', openMobileNav);
-        mobileMask?.addEventListener('click', closeMobileNav);
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeMobileNav();
+        toggle?.addEventListener('click', () => {
+            mobileNav.classList.toggle('translate-x-full');
+            mobileNav.classList.toggle('translate-x-0');
         });
-        // Optional: Close menu when clicking outside nav/toggle
+        // Optional: Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!mobileNav.contains(e.target) && !toggle.contains(e.target) && !mobileMask.contains(e.target)) {
-                closeMobileNav();
+            if (!mobileNav.contains(e.target) && !toggle.contains(e.target)) {
+                mobileNav.classList.add('translate-x-full');
+                mobileNav.classList.remove('translate-x-0');
             }
         });
     });
 </script>
-<style>
-@keyframes moveSlow {
-    0% { transform: translateY(0) scale(1) rotate(0deg); }
-    25% { transform: translateY(10px) scale(1.05) rotate(3deg); }
-    50% { transform: translateY(0) scale(1) rotate(-2deg); }
-    75% { transform: translateY(-8px) scale(0.98) rotate(2deg); }
-    100% { transform: translateY(0) scale(1) rotate(0deg); }
-}
-@keyframes moveMedium {
-    0% { transform: translateY(0) scale(1) rotate(0deg); }
-    25% { transform: translateY(-8px) scale(0.98) rotate(-2deg); }
-    50% { transform: translateY(0) scale(1.03) rotate(2deg); }
-    75% { transform: translateY(8px) scale(1) rotate(-3deg); }
-    100% { transform: translateY(0) scale(1) rotate(0deg); }
-}
-@keyframes moveFast {
-    0% { transform: translateX(0) scale(1) rotate(0deg); }
-    25% { transform: translateX(12px) scale(1.03) rotate(2deg); }
-    50% { transform: translateX(0) scale(1) rotate(-2deg); }
-    75% { transform: translateX(-10px) scale(0.97) rotate(3deg); }
-    100% { transform: translateX(0) scale(1) rotate(0deg); }
-}
-.animate-move-slow { animation: moveSlow 6s ease-in-out infinite alternate; }
-.animate-move-medium { animation: moveMedium 5s ease-in-out infinite alternate; }
-.animate-move-fast { animation: moveFast 4s ease-in-out infinite alternate; }
-</style>
 </header>
