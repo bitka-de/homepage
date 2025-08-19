@@ -14,6 +14,7 @@ Route::view('/leistungen/beratung', 'pages.beratung')->name('beratung');
 Route::view('/rechner/webseiten', 'webseiten.index')->name('webseiten.rechner');
 
 Route::view('/kontakt', 'pages.kontakt')->name('kontakt');
+Route::view('/links', 'pages.links')->name('links');
 # Rechtliches
 Route::view('/impressum', 'pages.impressum')->name('impressum');
 Route::view('/datenschutz', 'pages.datenschutz')->name('datenschutz');
