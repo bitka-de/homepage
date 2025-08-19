@@ -30,9 +30,8 @@
                         </span>
                     </div>
                     <div class="font-bold text-xl text-one mb-2">Exklusive Meta Info Video</div>
-                    <p class="text-gray-400 mb-4">Egal ob Instagram oder Co. das ist das einzige Video was du schauen musst
-                        um Reichweite in 2025 in Social Media zu generieren.</p>
-                    <a href="https://buy.stripe.com/4gM6oIbbH31reXh2aXbV600" target="_blank" rel="noopener"
+                    <p class="text-gray-400 mb-4">Willst du 2025 wirklich Reichweite auf Instagram & Co.? Dieses Video zeigt dir exklusiv, wie du Social Media endlich für dich gewinnst – verpasse nicht die entscheidenden Insights!</p>
+                    <a href="{{route('meta.index')}}" target="_blank" rel="noopener"
                         class="inline-flex px-6 py-3 gap-2 mt-2 rounded-t-lg bg-one text-gray-900 font-semibold shadow hover:bg-one transition">
                         <svg viewBox="0 0 256 256" class="size-6 mx-auto">
                             <path
@@ -47,7 +46,7 @@
                         Dienstleistungen</div>
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-1 sm:gap-4 overflow-x-auto flex-nowrap flex sm:grid sm:overflow-visible"
                         style="scroll-snap-type: x mandatory;">
-                        <a href="{{ route('webseiten') }}"
+                        <a href="{{ route('webseiten') }}" target="_blank" rel="noopener"
                             class="group min-w-[260px] sm:min-w-0 flex-shrink-0 scroll-snap-align-start block w-full p-0 rounded-xl border border-one/40 bg-gradient-to-br from-[#23272f] via-[#181c22] to-[#23272f] shadow-lg hover:border-one hover:shadow-[0_0_16px_4px_#7cfdff44] transition-all duration-300">
                             <div class="flex items-center gap-3 px-4 py-3">
                                 <span class="inline-block bg-one/20 rounded-full p-2 text-xl text-one shadow">
@@ -61,7 +60,7 @@
                                     850 €</span>
                             </div>
                         </a>
-                        <a href="{{ route('onlineshops') }}"
+                        <a href="{{ route('onlineshops') }}" target="_blank" rel="noopener"
                             class="group min-w-[260px] sm:min-w-0 flex-shrink-0 scroll-snap-align-start block w-full p-0 rounded-xl border border-two/40 bg-gradient-to-br from-[#23272f] via-[#181c22] to-[#23272f] shadow-lg hover:border-two hover:shadow-[0_0_16px_4px_#eeffa344] transition-all duration-300">
                             <div class="flex items-center gap-3 px-4 py-3">
                                 <span class="inline-block bg-two/20 rounded-full p-2 text-xl text-two shadow">
@@ -75,7 +74,7 @@
                                     class="font-bold text-base text-two group-hover:text-one tracking-wide">Onlineshops</span>
                             </div>
                         </a>
-                        <a href="{{ route('programmierung') }}"
+                        <a href="{{ route('programmierung') }}" target="_blank" rel="noopener"
                             class="group min-w-[260px] sm:min-w-0 flex-shrink-0 scroll-snap-align-start block w-full p-0 rounded-xl border border-three/40 bg-gradient-to-br from-[#23272f] via-[#181c22] to-[#23272f] shadow-lg hover:border-three hover:shadow-[0_0_16px_4px_#ffc6c644] transition-all duration-300">
                             <div class="flex items-center gap-3 px-4 py-3">
                                 <span class="inline-block bg-three/20 rounded-full p-2 text-xl text-three shadow">
@@ -89,7 +88,7 @@
                                     class="font-bold text-base text-three group-hover:text-one tracking-wide">Programmierung</span>
                             </div>
                         </a>
-                        <a href="{{ route('beratung') }}"
+                        <a href="{{ route('beratung') }}" target="_blank" rel="noopener"
                             class="group min-w-[260px] sm:min-w-0 flex-shrink-0 scroll-snap-align-start block w-full p-0 rounded-xl border border-white/40 bg-gradient-to-br from-[#23272f] via-[#181c22] to-[#23272f] shadow-lg hover:border-one hover:shadow-[0_0_16px_4px_#7cfdff44] transition-all duration-300">
                             <div class="flex items-center gap-3 px-4 py-3">
                                 <span class="inline-block bg-white/20 rounded-full p-2 text-xl text-white shadow">

@@ -1,7 +1,9 @@
 @extends('layouts.landing')
 
 @section('title', 'Meta25 Infovideo – Mehr Reichweite & Umsatz 2025')
-@section('meta_description', 'Meta25: Das exklusive Infovideo für Instagram & Co. 2025. Erfahre aktuelle Strategien, No-Go’s und praxisnahe Tipps für mehr Reichweite und Umsatz. Jetzt Zugang sichern!')
+@section('meta_description',
+    'Meta25: Das exklusive Infovideo für Instagram & Co. 2025. Erfahre aktuelle Strategien,
+    No-Go’s und praxisnahe Tipps für mehr Reichweite und Umsatz. Jetzt Zugang sichern!')
 @section('og_image', asset('media/video.png'))
 
 @section('content')
@@ -52,7 +54,7 @@
         class="sticky top-0 z-50 bg-gradient-to-r from-purple-900 via-pink-700 to-red-600 backdrop-blur border-b border-transparent shadow-lg">
         <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
             <div class="flex items-center gap-3 text-white">
-                <svg viewBox="0 0 256 256" class="size-7 animate-bounce" fill="currentColor">
+                <svg viewBox="0 0 256 256" class="size-7" fill="currentColor">
                     <path
                         d="M223.85 47.12a16 16 0 0 0-15-15c-12.58-.75-44.73.4-71.41 27.07L132.69 64H74.36A15.91 15.91 0 0 0 63 68.68L28.7 103a16 16 0 0 0 9.07 27.16l38.47 5.37 44.21 44.21 5.37 38.49a15.94 15.94 0 0 0 10.78 12.92 16.11 16.11 0 0 0 5.1.83 15.91 15.91 0 0 0 11.3-4.68l34.32-34.3a15.91 15.91 0 0 0 4.68-11.36v-58.33l4.77-4.77c26.68-26.68 27.83-58.83 27.08-71.42ZM74.36 80h42.33l-39.53 39.52L40 114.34Zm74.41-9.45a76.65 76.65 0 0 1 59.11-22.47 76.46 76.46 0 0 1-22.42 59.16L128 164.68 91.32 128ZM176 181.64 141.67 216l-5.19-37.17L176 139.31Zm-74.16 9.5C97.34 201 82.29 224 40 224a8 8 0 0 1-8-8c0-42.29 23-57.34 32.86-61.85a8 8 0 0 1 6.64 14.56c-6.43 2.93-20.62 12.36-23.12 38.91 26.55-2.5 36-16.69 38.91-23.12a8 8 0 1 1 14.56 6.64Z" />
                 </svg>
@@ -119,7 +121,7 @@
                 <button id="toggleBtn"
                     class="bg-purple-700 text-white px-6 py-2 rounded-full font-bold shadow hover:bg-pink-600 transition">Play</button>
                 <button id="fullscreenBtn"
-                    class="bg-gray-200 text-purple-700 px-6 py-2 rounded-full font-bold shadow hover:bg-purple-100 transition flex items-center gap-2">
+                    class="bg-gray-200 text-purple-800 px-6 py-2 rounded-full font-bold shadow hover:bg-purple-100 transition flex items-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M4 4h6M4 4v6M4 4l6 6M20 20h-6M20 20v-6M20 20l-6-6" />
@@ -129,9 +131,10 @@
             </div>
             <div class="mt-10">
                 <a id="ctaBtn" href="#kaufen"
-                    class="inline-block rounded-full bg-pink-600 px-8 py-4 text-white font-bold shadow-lg transition hover:bg-purple-700 opacity-0 pointer-events-none">Jetzt
+                    class="inline-block rounded-full bg-pink-900  px-8 py-4 text-white font-bold shadow-lg transition hover:bg-purple-700 opacity-0 pointer-events-none">Jetzt
                     komplettes Video ansehen</a>
             </div>
+
         </div>
         <script>
             const video = document.getElementById('meta25teaser');
@@ -201,12 +204,13 @@
                 isPlaying = true;
             });
 
-            video.addEventListener('ended', () => {
-                ctaBtn.classList.remove('opacity-0', 'pointer-events-none');
-                ctaBtn.classList.add('opacity-100');
-                toggleBtn.textContent = 'Play';
-                overlay.classList.add('hidden');
-                isPlaying = false;
+
+            // Zeige CTA nach 12 Sekunden Videozeit
+            video.addEventListener('timeupdate', function() {
+                if (video.currentTime >= 5) {
+                    ctaBtn.classList.remove('opacity-0', 'pointer-events-none');
+                    ctaBtn.classList.add('opacity-100');
+                }
             });
 
             video.addEventListener('timeupdate', updateProgress);
@@ -371,12 +375,7 @@
                 </svg>
                 <span class="font-bold text-lg text-white">Meta25</span>
             </div>
-            <nav class="flex gap-6 text-sm">
-                <a href="#video" class="hover:text-pink-400 transition">Teaser</a>
-                <a href="#inhalte" class="hover:text-pink-400 transition">Inhalte</a>
-                <a href="#stimmen" class="hover:text-pink-400 transition">Stimmen</a>
-                <a href="#kaufen" class="hover:text-pink-400 transition">Kaufen</a>
-            </nav>
+
             <div class="text-xs text-gray-400 text-center md:text-right">
                 &copy; {{ date('Y') }} Webagentur Bitka &ndash; <a href="/impressum"
                     class="underline hover:text-pink-400">Impressum</a> &middot; <a href="/datenschutz"
