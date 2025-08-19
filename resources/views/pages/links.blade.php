@@ -32,7 +32,7 @@
                     <div class="font-bold text-xl text-one mb-2">Exklusive Meta Info Video</div>
                     <p class="text-gray-400 mb-4">Egal ob Instagram oder Co. das ist das einzige Video was du schauen musst
                         um Reichweite in 2025 in Social Media zu generieren.</p>
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener"
+                    <a href="https://buy.stripe.com/4gM6oIbbH31reXh2aXbV600" target="_blank" rel="noopener"
                         class="inline-flex px-6 py-3 gap-2 mt-2 rounded-t-lg bg-one text-gray-900 font-semibold shadow hover:bg-one transition">
                          <svg viewBox="0 0 256 256" class="size-6 mx-auto">
                             <path
