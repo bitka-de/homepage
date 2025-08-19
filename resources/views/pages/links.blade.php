@@ -10,7 +10,7 @@
 @section('content')
     <div class="min-h-screen flex py-12 flex-col items-center justify-center px-4 relative overflow-hidden"
         style="background: linear-gradient(135deg, #181c22 0%, #23272f 100%);">
-        <canvas id="particles-bg" class="absolute inset-0 w-full h-screen z-0 pointer-events-none"></canvas>
+        <canvas id="particles-bg" class="fixed inset-0 w-full h-screen z-0 pointer-events-none"></canvas>
 
 
         <div class="w-full max-w-md mx-auto text-center relative z-10 text-balance">
@@ -34,7 +34,7 @@
                         um Reichweite in 2025 in Social Media zu generieren.</p>
                     <a href="https://buy.stripe.com/4gM6oIbbH31reXh2aXbV600" target="_blank" rel="noopener"
                         class="inline-flex px-6 py-3 gap-2 mt-2 rounded-t-lg bg-one text-gray-900 font-semibold shadow hover:bg-one transition">
-                         <svg viewBox="0 0 256 256" class="size-6 mx-auto">
+                        <svg viewBox="0 0 256 256" class="size-6 mx-auto">
                             <path
                                 d="M232.4 114.49 88.32 26.35a16 16 0 0 0-16.2-.3A15.86 15.86 0 0 0 64 39.87v176.26A15.94 15.94 0 0 0 80 232a16.07 16.07 0 0 0 8.36-2.35l144.04-88.14a15.81 15.81 0 0 0 0-27ZM80 215.94V40l143.83 88Z" />
                         </svg>
@@ -43,7 +43,8 @@
                 </div>
 
                 <div class="text-left">
-                    <div class="text-lg font-thin text-white mb-4 tracking-wide uppercase bg-black/50 p-3 text-center">Dienstleistungen</div>
+                    <div class="text-lg font-thin text-white mb-4 tracking-wide uppercase bg-black/50 p-3 text-center">
+                        Dienstleistungen</div>
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-1 sm:gap-4 overflow-x-auto flex-nowrap flex sm:grid sm:overflow-visible"
                         style="scroll-snap-type: x mandatory;">
                         <a href="{{ route('webseiten') }}"
