@@ -5,6 +5,12 @@
 
     RewriteEngine On
 
+    # --- Kanonische Domain + HTTPS in EINEM Schritt ---
+    # Wenn NICHT https ODER Host = www.bitka.de  -> redirect direkt auf https://bitka.de
+    RewriteCond %{HTTPS} !=on [OR]
+    RewriteCond %{HTTP_HOST} ^www\.bitka\.de$ [NC]
+    RewriteRule ^ https://bitka.de%{REQUEST_URI} [L,R=301]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

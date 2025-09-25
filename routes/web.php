@@ -18,11 +18,11 @@ Route::view('/kontakt', 'pages.kontakt')->name('kontakt');
 Route::view('/links', 'pages.links')->name('links');
 
 
-Route::view('/video-meta', 'meta.index')->name('meta.index');
+#Route::view('/video-meta', 'meta.index')->name('meta.index');
 
-Route::post('/checkout', [StripeController::class, 'checkout'])->name('meta.checkout');
-Route::get('/video-meta/success', [StripeController::class, 'success'])->name('meta.success');
-Route::get('/cancel', [StripeController::class, 'cancel'])->name('meta.cancel');
+#Route::post('/checkout', [StripeController::class, 'checkout'])->name('meta.checkout');
+#Route::get('/video-meta/success', [StripeController::class, 'success'])->name('meta.success');
+#Route::get('/cancel', [StripeController::class, 'cancel'])->name('meta.cancel');
 
 
 # Rechtliches
