@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Strategische Web-Beratung – Analyse, Insights & Empfehlungen | Bitka')
+@section('title', 'Strategische Web-Beratung für Unternehmen | Bitka')
 @section('meta_description', 'Wir analysieren deine Website oder deinen Online-Shop und finden heraus, wo Potenzial verschenkt wird – mit klaren Handlungsempfehlungen für bessere Performance und höhere Conversion.')
 
 @section('content')

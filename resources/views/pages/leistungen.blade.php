@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Leistungen – Bitka')
+@section('title', 'Leistungen für Web & Online-Shops | Bitka')
 @section('meta_description',
     'Unsere Leistungen: Webseiten, Online-Shops, individuelle Webentwicklung und persönliche
     Beratung – alles aus einer Hand.')

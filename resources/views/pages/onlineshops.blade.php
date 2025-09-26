@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Online-Shops entwickeln lassen – professionell & individuell | Bitka')
+@section('title', 'Online-Shops entwickeln lassen | Bitka')
 @section('meta_description', 'Moderne, performante Online-Shops individuell entwickelt – technisch stark, strategisch
     durchdacht, verkaufsorientiert. Ab 850 €. Jetzt starten.')
 

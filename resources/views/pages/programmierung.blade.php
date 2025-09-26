@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Individuelle Webentwicklung – flexibel, professionell & effizient | Bitka')
+@section('title', 'Individuelle Webentwicklung & Programmierung | Bitka')
 @section('meta_description', 'Individuelle Programmierung für Webprojekte – maßgeschneidert, skalierbar und strategisch durchdacht. Ab 65 €/Stunde. Jetzt Projekt starten.')
 
 @section('content')
